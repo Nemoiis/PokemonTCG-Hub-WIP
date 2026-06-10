@@ -1,52 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+    * {
+    box-sizing: border-box; /* Makes layout sizing much easier to handle */
+    margin: 0;              /* Removes default browser margins */
+    padding: 0;             /* Removes default browser padding */
+    }
 
-* {
-  box-sizing: border-box; /* Makes layout sizing much easier to handle */
-  margin: 0;              /* Removes default browser margins */
-  padding: 0;             /* Removes default browser padding */
-}
+    :root{
+    --bg-color: #171d33;
+    --card: #1a2540;
+    --bg-elevated: #243050;
+    --accent: #ff6b1a;
+    --accent-blue: #38bdf8;
+    --text: #e8eef8;
+    --text-muted: #888888;
+    }
 
-:root{
-  --bg-color: #0d1628;
-  --bg-elevated: #2b4d6b;
-  --accent: #ff6b1a;
-  --accent-blue: #38bdf8;
-  --text: #f0f4ff;
-  --text-muted: #888888;
-}
+    body{
+        background-color: var(--bg-color);
+    }
 
-body{
-    background-color: var(--bg-color);
-}
+    nav{
+        padding: 25px 32px;
+        display: flex;
+        align-items: center;
+        height: 85px;
+        border-bottom:2px solid var(--accent);
+        margin-bottom:10px;
 
-nav{
-    padding: 25px 32px;
-    display: flex;
-    align-items: center;
-    height: 85px;
-    border-bottom:2px solid var(--accent);
+    }
 
-}
+    nav ul{
+        display:flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
 
-nav ul{
-    display:flex;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-}
+    nav ul li a{
+        text-decoration: none;
+        font-family:"Space Grotesk", sans-serif;
+        font-size:16px;
+        letter-spacing: normal;
+        color:var(--text);
+        font-weight: bold;
+    }
 
-nav ul li a{
-    text-decoration: none;
-    font-family:"Space Grotesk", sans-serif;
-    font-size:16px;
-    letter-spacing: normal;
-    color:var(--bg-elevated);
-}
+    nav ul li a:hover {
+    color: var(--accent);
+    transition: color 0.2s ease;
+    }
+    
+    #logo{
+        padding-right:15px;
+        display:block;
+        width:auto;
+        height:50px;   
+    }
 
-#logo{
-    padding-right:15px;
-    display:block;
-    width:auto;
-    height:60px;   
+    .carosel{
+        margin: 3px auto;
+        width: 100%;
+        display: flex;
+        overflow-x:auto;
+    }
+
+    .carosel::-webkit-scrollbar{
+        display:none;
+    }
+    .group{
+        display:flex;
+        gap:10px;
+        padding-right:10px;
+    }
+
+    .card{
+        flex:0 0 250px;
+        display:flex;
+        align-items: center;
+        height:55px;
+        padding:1em;
+        background:var(--card);
+        border-radius: .2em;
+    }
+    .dupeCard{
+        flex:0 0 250px;
+        display:flex;
+        align-items: center;
+        height:55px;
+        padding:1em;
+        background:var(--card);
+        border-radius: .2em;
+    }
+    .pic{
+        display:flex;
+        width:auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dupePic{
+        display:flex;
+        width:auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card img{
+        height:55px;
+        width:45px;
+    }   
+
+    .dupeCard img{
+        height: 55px;
+        width: 45px;
+
+    }
+
+    .pic img{
+        height: 45px;
+        width: 35px;
+    }
+
+    .dupePic img{
+        height: 45px;
+        width: 35px;
+    }
+
+    .card span{
+        margin-left: 5px;
+        font-size:large;
+        color: var(--text);
+        font-weight: bold;
+        font-family:"Plus Jakarta Sans", sans-serif;
+    }
+
+    .dupeCard span{
+        font-size:large;
+        font-weight: bold;
+        margin-left: 5px;
+        color: var(--text);
+        font-family:"Plus Jakarta Sans", sans-serif;
+    }
+
+    .card:hover, .dupeCard:hover {
+    background-color: var(--bg-elevated);
+    transition: background-color 0.2s ease;
+    }
+
+    .card, .dupeCard {
+        border: 1px solid var(--bg-elevated);
+        border-left: 3px solid var(--accent-blue);
+    }
+
+    @keyframes spin-left {
+        from{translate: 0;}
+        to{translate: -100%;}
+        
+    }
+
+    @keyframes spin-right {
+        from{translate: -100%;}
+        to{translate: 0%;}
+        
+    }
+
+    .spin-left {
+        animation: spin-left 20s infinite linear;
+    }
+
+    .spin-right {
+        animation: spin-right 20s infinite linear;
+    }
+
+    #heroWrapper {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 85%);
 }
