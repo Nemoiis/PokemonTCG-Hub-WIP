@@ -1,298 +1,381 @@
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-    * {
-    box-sizing: border-box; /* Makes layout sizing much easier to handle */
-    margin: 0;              /* Removes default browser margins */
-    padding: 0;             /* Removes default browser padding */
-    }
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+/* ============================================================
+   RESET
+   ============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    :root{
-    --bg-color: #171d33;
-    --card: #1a2540;
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+    --bg-color: #0f1526;
+    --card: #171d33;
     --bg-elevated: #243050;
     --accent: #ff6b1a;
     --accent-blue: #38bdf8;
     --text: #e8eef8;
     --text-muted: #888888;
-    --font-Jans:"Plus Jakarta Sans", sans-serif;
-    }
+    --font-Jans: "Plus Jakarta Sans", sans-serif;
+}
 
-    body{
-        background-color: var(--bg-color);
-    }
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+    background-color: var(--bg-color);
+}
 
-    nav{
-        padding: 20px 32px;
-        display: flex;
-        align-items: center;
-        height: 85px;
-        border-bottom:2px solid var(--accent);
-        margin-bottom:10px;
-    }
+/* ============================================================
+   NAV
+   ============================================================ */
+nav {
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    height: 85px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 10px;
+}
 
-    nav ul{
-        display:flex;
-        list-style: none;
-        justify-content: center;
-        align-items: center;
-        gap: 24px;
-        
-    }
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
 
-    nav ul li a{
-        text-decoration: none;
-        font-family:"Space Grotesk", sans-serif;
-        font-size:16px;
-        letter-spacing: normal;
-        color:var(--text);
-        font-weight: bold;
-    }
+nav ul li a {
+    text-decoration: none;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
+    letter-spacing: normal;
+    color: var(--text);
+    font-weight: bold;
+}
 
-    nav ul li a:hover {
+nav ul li a:hover {
     color: var(--accent);
     transition: color 0.2s ease;
-    }
-    
-    #logo{
-        padding-right:15px;
-        display:block;
-        width:auto;
-        height:50px;   
-    }
+}
 
-    .carosel{
-        margin: 3px auto;
-        width: 100%;
-        display: flex;
-        overflow-x:auto;
-    }
+#logo {
+    padding-right: 15px;
+    display: block;
+    width: auto;
+    height: 50px;
+}
 
-    .carosel::-webkit-scrollbar{
-        display:none;
-    }
-    .group{
-        display:flex;
-        gap:10px;
-        padding-right:10px;
-    }
+/* ============================================================
+   HERO WRAPPER & OVERLAY
+   ============================================================ */
+#heroWrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
 
-    .card{
-        flex:0 0 250px;
-        display:flex;
-        align-items: center;
-        height:55px;
-        padding:1em;
-        background:var(--card);
-        border-radius: .2em;
-    }
-    .dupeCard{
-        flex:0 0 250px;
-        display:flex;
-        align-items: center;
-        height:55px;
-        padding:1em;
-        background:var(--card);
-        border-radius: .2em;
-    }
-    .pic{
-        display:flex;
-        width:auto;
-        justify-content: center;
-        align-items: center;
-    }
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 75%);
+}
 
-    .dupePic{
-        display:flex;
-        width:auto;
-        justify-content: center;
-        align-items: center;
-    }
+/* ============================================================
+   HERO TEXT
+   ============================================================ */
+.mainTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -100px;
+    font-size: 2.2rem;
+    align-items: center;
+    letter-spacing: -.025em;
+    font-family: var(--font-Jans);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
 
-    .card img{
-        height:55px;
-        width:45px;
-    }   
+.topText {
+    color: var(--text);
+}
 
-    .dupeCard img{
-        height: 55px;
-        width: 45px;
+.middleText {
+    color: var(--accent-blue);
+    opacity: 0.6;
+}
 
-    }
+/* ============================================================
+   BLURB
+   ============================================================ */
+.blurb {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    color: var(--text);
+    opacity: 0.6;
+    text-align: center;
+}
 
-    .pic img{
-        height: 45px;
-        width: 35px;
-    }
+#tcg { color: red; }
+#ebay { color: orange; }
 
-    .dupePic img{
-        height: 45px;
-        width: 35px;
-    }
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 100px;
+}
 
-    .card span{
-        margin-left: 5px;
-        font-size:large;
-        color: var(--text);
-        font-weight: bold;
-        font-family:var(--font-Jans);
-    }
+.btnOne, .btnTwo, .btnThree {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-Jans);
+    width: 225px;
+    height: 50px;
+    border-style: none;
+    color: var(--text);
+    cursor: pointer;
+}
 
-    .dupeCard span{
-        font-size:large;
-        font-weight: bold;
-        margin-left: 5px;
-        color: var(--text);
-        font-family:var(--font-Jans);
-    }
+.btnOne, .btnTwo {
+    background-color: var(--accent);
+}
 
-    .card:hover, .dupeCard:hover {
+.btnOne:hover, .btnTwo:hover {
+    background-color: var(--text);
+    color: var(--accent);
+    transition: .25s ease-in;
+}
+
+.btnThree {
+    background-color: var(--accent-blue);
+}
+
+.btnThree:hover {
+    background-color: var(--text);
+    color: var(--accent-blue);
+    transition: .25s ease-in;
+}
+
+/* ============================================================
+   TINY / FREE LABEL
+   ============================================================ */
+.tiny {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--accent);
+    width: 100%;
+}
+
+.sml {
+    letter-spacing: .1em;
+    line-height: 1.5;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 10px;
+    color: #06b6d4;
+    font-family: var(--font-Jans);
+    margin-bottom: 100px;
+}
+
+/* ============================================================
+   CAROUSEL — SHARED
+   ============================================================ */
+.carosel {
+    margin: 3px auto;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+}
+
+.carosel::-webkit-scrollbar,
+.caroselTwo::-webkit-scrollbar {
+    display: none;
+}
+
+.group,
+.groupTwo {
+    display: flex;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.card, .cardTwo,
+.dupeCard, .dupeCardTwo {
+    flex: 0 0 250px;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    padding: 1em;
+    background: var(--card);
+    border-radius: .2em;
+    border: 1px solid var(--bg-elevated);
+    border-left: 3px solid var(--accent);
+}
+
+.card:hover, .cardTwo:hover,
+.dupeCard:hover, .dupeCardTwo:hover {
     background-color: var(--bg-elevated);
     transition: background-color 0.2s ease;
-    }
+}
 
-    .card, .dupeCard {
-        border: 1px solid var(--bg-elevated);
-        border-left: 3px solid var(--accent-blue);
-    }
+.pic, .picTwo,
+.dupePic, .dupePicTwo {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
 
-    @keyframes spin-left {
-        from{translate: 0;}
-        to{translate: -100%;}
-        
-    }
+.card img, .cardTwo img,
+.dupeCard img, .dupeCardTwo img {
+    height: 55px;
+    width: 45px;
+}
 
-    @keyframes spin-right {
-        from{translate: -100%;}
-        to{translate: 0%;}
-        
-    }
+.card span, .cardTwo span,
+.dupeCard span, .dupeCardTwo span {
+    margin-left: 5px;
+    font-size: large;
+    color: var(--text);
+    font-weight: bold;
+    font-family: var(--font-Jans);
+}
 
-    .spin-left {
-        animation: spin-left 20s infinite linear;
-    }
+/* ============================================================
+   CAROUSEL — ANIMATIONS
+   ============================================================ */
+@keyframes spin-left {
+    from { translate: 0; }
+    to { translate: -100%; }
+}
 
-    .spin-right {
-        animation: spin-right 20s infinite linear;
-    }
+@keyframes spin-right {
+    from { translate: -100%; }
+    to { translate: 0%; }
+}
 
-        #heroWrapper {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
+.spin-left {
+    animation: spin-left 20s infinite linear;
+}
 
-        #overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 75%);
-        }
+.spin-right {
+    animation: spin-right 20s infinite linear;
+}
 
-    .mainTextContainer{
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top:-100px;
-        font-size:2.2rem;
-        align-items: center;
-        letter-spacing: -.025em;
-        font-family:var(--font-Jans);
-        position: relative;
-        z-index: 2;
-        text-align: center;
-    }
+/* ============================================================
+   CAROUSEL TWO — OVERRIDES
+   ============================================================ */
+.caroselTwo {
+    margin: 3px auto;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+}
 
-    .topText{
-        color: var(--text);
-    }
+.cardTwo, .dupeCardTwo {
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 300px;
+    height: 500px;
+    z-index: 0;
+}
 
-    .middleText{
-        color:var(--accent-blue);
-        opacity:0.6;
-    }
+.cardTwo img, .dupeCardTwo img {
+    height: 350px;
+    width: 250px;
+    border-radius: 10%;
+}
 
-    .blurb{
-        max-width: 600px;
-        margin:0 auto;
-        font-size: 20px;
-        letter-spacing:0.02em;
-        line-height:1.6;
-        color: var(--text);
-        opacity:0.6;
-        text-align: center;
-    }
+.cardTwo span, .dupeCardTwo span {
+    font-size: 14px;
+}
 
-    #tcg{
-        color:red;
-    }
+.innerCardContainer{
+    width:250px;
+    display: flex;
+    flex-direction: column;
+}
 
-    #ebay{
-        color:orange;
-    }
+.var{
+    margin-top:10px;
+    margin-bottom:8px;
+    padding:5px 10px;
+    font-size: 10px;
+    background-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    border-radius: 20px;
+    align-self: flex-start;
+}
 
-    .buttons{
-        display:flex;
-        flex-direction: row;
-        margin-top:50px;
-        gap:100px;
-    }
+.cardTwo span.var, .dupeCardTwo span.var {
+    color: var(--accent);
+}
 
-    .btnOne, .btnTwo, .btnThree{
-        font-size:16px;
-        font-weight:500;
-        font-family:var(--font-Jans);
-        width:225px;
-        height:50px;
-    }
+.cardTwo span.name, .dupeCardTwo span.name{
+    margin-top:-3px;
+    font-size: 18px;
+}
 
-    .btnOne, .btnTwo{
-        background-color: var(--accent);
-        border-style:none;
-        color:var(--text);
-    }
+.priceContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+    margin-top: 10px;
+    width:250px;
 
-        .btnOne:hover, .btnTwo:hover{
-        cursor: pointer;
-        background-color: var(--text);
-        border-style:none;
-        color:var(--accent);
-        transition: .25s ease-in;
-    }
+}
 
-    .btnThree{
-        background-color: var(--accent-blue);
-        border-style:none;
-        color:var(--text);
-    }
+.priceRowOne {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
 
-    .btnThree:hover{
-        cursor: pointer;
-        background-color: var(--text);
-        border-style:none;
-        color:var(--accent-blue);
-        transition: .25s ease-in;
+.priceRowTwo {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
 
-    }
+.priceContainer .priceRowTwo{
+     margin-top:5px;
+}
 
-    .tiny{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        border-bottom: 2px solid var(--accent);
-        width: 100%;
+.cardTwo span.priceLabel, .dupeCardTwo span.priceLabel,
+.cardTwo span.ebayPrice, .dupeCardTwo span.ebayPrice,
+.cardTwo span.tcgPrice, .dupeCardTwo span.tcgPrice {
+    color: #2d6f98;
+}
 
-    }
-
-    .sml{
-        letter-spacing: .1em;
-        line-height: 1.5;
-        margin-top:25px;
-        font-weight: 700;
-        font-size: 10px;
-        color:#06b6d4  ;
-        font-family: var(--font-Jans);
-        margin-bottom:100px
-    }
+#hotCardsText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    letter-spacing: -.025em;
+    font-family: "Exo 2", sans-serif;
+    color:var(--accent-blue);
+    text-decoration: underline;
+}
