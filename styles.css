@@ -14,6 +14,7 @@
     --accent-blue: #38bdf8;
     --text: #e8eef8;
     --text-muted: #888888;
+    --font-Jans:"Plus Jakarta Sans", sans-serif;
     }
 
     body{
@@ -21,13 +22,12 @@
     }
 
     nav{
-        padding: 25px 32px;
+        padding: 20px 32px;
         display: flex;
         align-items: center;
         height: 85px;
         border-bottom:2px solid var(--accent);
         margin-bottom:10px;
-
     }
 
     nav ul{
@@ -36,6 +36,7 @@
         justify-content: center;
         align-items: center;
         gap: 24px;
+        
     }
 
     nav ul li a{
@@ -133,7 +134,7 @@
         font-size:large;
         color: var(--text);
         font-weight: bold;
-        font-family:"Plus Jakarta Sans", sans-serif;
+        font-family:var(--font-Jans);
     }
 
     .dupeCard span{
@@ -141,7 +142,7 @@
         font-weight: bold;
         margin-left: 5px;
         color: var(--text);
-        font-family:"Plus Jakarta Sans", sans-serif;
+        font-family:var(--font-Jans);
     }
 
     .card:hover, .dupeCard:hover {
@@ -174,18 +175,124 @@
         animation: spin-right 20s infinite linear;
     }
 
-    #heroWrapper {
+        #heroWrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 75%);
+        }
+
+    .mainTextContainer{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top:-100px;
+        font-size:2.2rem;
+        align-items: center;
+        letter-spacing: -.025em;
+        font-family:var(--font-Jans);
         position: relative;
-        height: 200px;
-        overflow: hidden;
+        z-index: 2;
+        text-align: center;
     }
 
-    #overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 85%);
-}
+    .topText{
+        color: var(--text);
+    }
+
+    .middleText{
+        color:var(--accent-blue);
+        opacity:0.6;
+    }
+
+    .blurb{
+        max-width: 600px;
+        margin:0 auto;
+        font-size: 20px;
+        letter-spacing:0.02em;
+        line-height:1.6;
+        color: var(--text);
+        opacity:0.6;
+        text-align: center;
+    }
+
+    #tcg{
+        color:red;
+    }
+
+    #ebay{
+        color:orange;
+    }
+
+    .buttons{
+        display:flex;
+        flex-direction: row;
+        margin-top:50px;
+        gap:100px;
+    }
+
+    .btnOne, .btnTwo, .btnThree{
+        font-size:16px;
+        font-weight:500;
+        font-family:var(--font-Jans);
+        width:225px;
+        height:50px;
+    }
+
+    .btnOne, .btnTwo{
+        background-color: var(--accent);
+        border-style:none;
+        color:var(--text);
+    }
+
+        .btnOne:hover, .btnTwo:hover{
+        cursor: pointer;
+        background-color: var(--text);
+        border-style:none;
+        color:var(--accent);
+        transition: .25s ease-in;
+    }
+
+    .btnThree{
+        background-color: var(--accent-blue);
+        border-style:none;
+        color:var(--text);
+    }
+
+    .btnThree:hover{
+        cursor: pointer;
+        background-color: var(--text);
+        border-style:none;
+        color:var(--accent-blue);
+        transition: .25s ease-in;
+
+    }
+
+    .tiny{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid var(--accent);
+        width: 100%;
+
+    }
+
+    .sml{
+        letter-spacing: .1em;
+        line-height: 1.5;
+        margin-top:25px;
+        font-weight: 700;
+        font-size: 10px;
+        color:#06b6d4  ;
+        font-family: var(--font-Jans);
+        margin-bottom:100px
+    }
