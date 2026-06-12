@@ -379,3 +379,79 @@ nav ul li a:hover {
     color:var(--accent-blue);
     text-decoration: underline;
 }
+/* ============================================================
+    SEARCH BAR
+   ============================================================ */
+
+#query{
+    width: 500px;
+    height:30px;
+    margin-bottom:-50px;
+}
+
+/* ============================================================
+    SEARCH RESULTS
+   ============================================================ */
+
+
+.searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.resultCard {
+    height: 550px;
+    width: 350px;
+    border-radius: 10px;
+    background-color:var(--card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 5px solid var(--accent-blue);
+
+}
+
+.pokeImg{
+    display:flex;
+    margin-top: 20px;
+    width: 300px;
+}
+
+.pokeName{
+    color:whitesmoke;
+    margin-top: 15px;
+    font-family: var(--font-Jans);
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.buttonContainer{
+    margin-top: 20px;
+}
+
+.viewCard{
+    width:250px;
+    height:45px;
+    font-size: 20px;
+    font-family:"Exo 2", sans-serif ;
+    border-style: none;
+    background-color:var(--accent);
+    margin-top: -10px;
+}
+
+.viewCard:hover{
+background-color: var(--text);
+color: var(--accent-blue);
+}
+
+.rCount{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    color:var(--text);
+    font-family:var(--font-Jans);
+
+}
