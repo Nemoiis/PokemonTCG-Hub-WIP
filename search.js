@@ -26,10 +26,18 @@ fetch(`https://api.tcgdex.net/v2/en/cards?name=${query}`)
         let cardName = data[results].name;
         let cardImg = data[results].image;
 
-        if(cardImg){
+        if(cardImg){    
             searchCard.innerHTML = `<img class="pokeImg"src="${cardImg}${extensions}">
             <span class="pokeName">${cardName}</span>
             <div class="buttonContainer"><button class="viewCard "type="button">View Card</button></div>`
+
+            detailedCardView = searchCard.querySelector('.viewCard');
+            
+            detailedCardView.addEventListener('click', function(event){
+            event.preventDefault();
+            window.location.href = `cardView.html?id=${data[results].id}`
+            })
+
             resultsList.appendChild(searchCard);
         }
     }

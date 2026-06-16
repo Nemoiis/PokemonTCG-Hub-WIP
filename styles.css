@@ -453,5 +453,163 @@ color: var(--accent-blue);
     justify-content: center;
     color:var(--text);
     font-family:var(--font-Jans);
+}
 
+
+
+.detailedCardViewContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 45px;
+    gap: 30px;
+}
+
+    .detailedImg{
+        display: flex;
+        flex-direction: row;
+        width: 450px;
+        height: 600px;
+        margin-top:45px;
+        margin-left:45px;
+        margin-right: 55px;
+    }
+
+    .cardInfoContainer {
+    display: flex;
+    flex-direction: column; /* stack name on top of orange box */
+    flex:1;
+    margin: 0;
+}
+
+.cardHeader {
+    margin-bottom: 16px; /* gap between name and orange box */
+}
+
+.pokeName {
+    color: var(--text);
+    font-family: var(--font-Jans);
+    font-size: 32px;
+}
+
+.orangeBox {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border-radius: 50px;
+    padding: 24px;
+    gap: 12px;
+    color: var(--text);
+    align-self: flex-start; /* shrinks to content width */
+}
+
+.boxesContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    
+}
+
+.marketBoxes {
+    display: flex;
+    flex-direction: row;
+    gap:200px;
+    align-items: center;
+    background-color: var(--bg-elevated);
+    border-radius: 16px;
+    padding: 16px 20px;
+    color: var(--text);
+}
+
+.tcgRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.market-box-value{
+    font-size:24px ;
+}
+
+.detailsBox {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border-radius: 20px;
+    padding: 20px 24px;
+    gap: 10px;
+    margin-top: 14px;
+    font-family: var(--font-Jans);
+}
+
+.marketLabel {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.cardDetailsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardDetailRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--bg-elevated);
+    font-size: 13px;
+}
+
+.cardDetailRow:last-child {
+    border-bottom: none;
+}
+
+.detail-key {
+    color: var(--text-muted);
+}
+
+.detail-val {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.collectionBox {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border-radius: 20px;
+    padding: 20px 24px;
+    gap: 12px;
+    margin-top: 14px;
+    font-family: var(--font-Jans);
+}
+
+.addToCollectionBtn {
+    width: 100%;
+    height: 44px;
+    background-color: var(--accent);
+    color: var(--text);
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: var(--font-Jans);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.addToCollectionBtn:hover {
+    background-color: var(--text);
+    color: var(--accent);
+    transition: 0.2s ease;
+}
+
+.addToCollectionBtn:disabled {
+    background-color: var(--bg-elevated);
+    color: var(--text-muted);
+    cursor: default;
 }
