@@ -221,20 +221,6 @@ const carOne   = buildCarousel('spin-left',  'sv03.5');
 const carTwo   = buildCarousel('spin-right', 'sv04.5');
 const carThree = buildCarousel('spin-left',  'me03');
 const carFour  = buildCarousel('spin-left',  null, hotCards);
-/* ============================================================
-   BUILD CAROUSELS
-   ============================================================ */
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-        console.log('firing', entry.isIntersecting);
-        if(entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-});
-
-observer.observe(document.getElementById('secondCaro'));
 
 /* ============================================================
     SEARCH BAR
